@@ -1,0 +1,1 @@
+# coffee machine boilerplate entry point

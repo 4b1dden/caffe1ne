@@ -11,6 +11,6 @@ V zložke ```api``` sa nachádza api projektu - Flask aplikácia. Poskytuje dát
 ```coffee``` slúži pre uloženie všetkého zdrojového kódu, ktorý je potreba ku komunikácii vnoreného systému s kávovarom.
 Vo ```web_interface``` je Vue.js aplikácia, ktorá slúži ako ovládací panel a nástroj na sledovanie štatistík.
 
-# Inštalácia
+## Inštalácia
 ```python3 init.py```
 Nakonfiguruje všetky projekty a spustí požadované servery (api, webové rozhranie). Po úspešnom spustení sú servery prístupné na lokálnej IP vnoreného systému.
