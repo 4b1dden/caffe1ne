@@ -1,0 +1,11 @@
+{
+    "titles": {
+        "project": "Dashboard for raspberry-pi powered coffee machine"
+    },
+    "language": {
+        "brazilian_portuguese": "Português",
+        "english": "English",
+        "spanish": "Spanish",
+        "slovak": "Slovensky"
+    }
+}
