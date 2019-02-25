@@ -12,6 +12,8 @@ V zložke ```api``` sa nachádza api projektu - Flask aplikácia. Poskytuje dát
 Vo ```web_interface``` je Vue.js aplikácia, ktorá slúži ako ovládací panel a nástroj na sledovanie štatistík.
 
 ## Inštalácia
-```chmod +x init.sh
-./init.sh```
+```
+chmod +x init.sh
+./init.sh
+```
 Nakonfiguruje všetky projekty a spustí požadované servery (api, webové rozhranie). Po úspešnom spustení sú servery prístupné na lokálnej IP vnoreného systému, aby medzi sebou mohli komunikovať.
