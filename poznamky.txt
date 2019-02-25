@@ -1,0 +1,3 @@
+zistenie procesu ktory pouziva dany port
+	sudo lsof -n -i :8080 | grep LISTEN
+
