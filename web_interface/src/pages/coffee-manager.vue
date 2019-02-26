@@ -16,9 +16,6 @@ export default {
             showCoffeeHistory: false
         }
     },
-    mounted() {
-        console.log(this.$store.state.testProperty)
-    },
     components: {
         'new-coffee-request': NewCoffeeRequest
     }

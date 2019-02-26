@@ -1,3 +1,7 @@
 export default {
-    userNickname: "Kiko"
+    userNickname: "Kiko",
+    stats: {
+        dashboard: {},
+        full: {}
+    }
 }

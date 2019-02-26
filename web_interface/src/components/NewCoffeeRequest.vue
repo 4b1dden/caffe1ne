@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import CoffeeRequestService from '../services/CoffeeRequestService.js';
+import CoffeeService from '../services/CoffeeService.js';
 
 export default {
     data() {
@@ -63,7 +63,9 @@ export default {
     },
     methods: {
         onButtonClick: function() {
-            CoffeeRequestService.getAllCoffeeRequests().then((r) => console.log(r));
+            CoffeeService.requestCoffee(this.form).then(response => {
+                console.log(response);
+            })
         }
     }
 }

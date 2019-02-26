@@ -55,11 +55,12 @@
 <script>
 import CoffeeManager from './coffee-manager.vue';
 import StatsManager from './stats-manager.vue';
+import CoffeeService from '../services/CoffeeService.js';
 
 export default {
-  components: {
-    'coffee-manager': CoffeeManager,
-    'stats-manager': StatsManager
-  }
+    components: {
+      'coffee-manager': CoffeeManager,
+      'stats-manager': StatsManager
+    }, 
 }
 </script>

@@ -1,3 +1,4 @@
 zistenie procesu ktory pouziva dany port
 	sudo lsof -n -i :8080 | grep LISTEN
 
+http://tobiasahlin.com/blog/chartjs-charts-to-get-you-started/
