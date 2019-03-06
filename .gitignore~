@@ -1,4 +1,3 @@
 api/*.pyc
 web_interface/node_modules
 run.sh~
-substrate/__pycache__
