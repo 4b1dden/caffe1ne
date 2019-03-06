@@ -18,7 +18,7 @@ export default {
     },
     created() {
         let that = this;
-        this.$store.dispatch("fetchDashboardStats").then(() => {
+        this.$store.dispatch("fetchAllStats").then(() => {
             that.statsFetched = true;
         });
     }

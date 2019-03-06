@@ -1,4 +1,8 @@
 zistenie procesu ktory pouziva dany port
 	sudo lsof -n -i :8080 | grep LISTEN
 
-http://tobiasahlin.com/blog/chartjs-charts-to-get-you-started/
+priklady na charts (v akej forme maju byt data)
+	http://tobiasahlin.com/blog/chartjs-charts-to-get-you-started/
+
+scheduling taskov python (sa bude hodit pri robeni kav do buducna)
+	https://github.com/dbader/schedule

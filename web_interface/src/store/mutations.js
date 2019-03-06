@@ -5,7 +5,14 @@ export default {
     setDashboardStats: (state, stats) => {
         state.stats.dashboard = stats;
     },
-    setFullStats: (state, stats) => {
-        state.stats.full = stats;
+    setAlltimeStats: (state, stats) => {
+        state.stats.all = stats;
+    },
+    addNewCoffeeToDashboardStats: (state, form) => {
+        let willBeRoastedAt = new Date();
+ 
+        if (form.roastRightAway) {
+            state.stats.dashboard.datasets[0].data[6] += form.amount;
+        }
     }
 }

@@ -3,10 +3,10 @@ import constants from '../constants';
 import store from '../store/store';
 
 export default {
-    getCoffeeStats: function(target) {
+    getCoffeeStats: function() {
         return new Promise (
             async function (resolve, reject) {
-                const response = await api.get(constants.API.ENDPOINTS.STATS.ENTRY, {target: target});
+                const response = await api.get(constants.API.ENDPOINTS.STATS.ENTRY);
                 if (response.ok) resolve(response.data);
                 else reject(response);
             }

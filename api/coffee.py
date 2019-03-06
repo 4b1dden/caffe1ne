@@ -3,6 +3,13 @@ from mappings import CoffeeRequest
 import flask
 from datetime import datetime, timedelta
 
+#importing substrate
+# import sys
+# import os
+# lib_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../substrate'))
+# sys.path.append(lib_path)
+
+
 parser = reqparse.RequestParser()
 parser.add_argument('name', type=str)
 parser.add_argument('amount', type=int)
@@ -28,9 +35,14 @@ class Coffee(Resource):
         
         # todo: call substrate api
         flask.g.session.add(req)
-        flask.g.session.commit()
+        # flask.g.session.commit()
 
         response_obj = args
         response_obj["willRoastAt"] = roastAt.strftime('%Y-%m-%dT%H:%M:%S')
+
+        # if args.roastRightAway:
+        #     print("robim kavu....")
+        #     resp = test.urobKavu()
+        #     print("Mam response .. {}".format(resp))
 
         return response_obj

@@ -5,14 +5,30 @@ export default {
     extends: Bar,
     data() {
         return {
+            _chart: null,
             options:  {
                 responsive: true,
                 maintainAspectRatio: false,
             }
         }
     },
+    methods: {
+        drawChart() {
+            this.renderChart(this.chartData, this.options);
+        }
+    },
+    computed: {
+        chartData: function () {
+            return this.$store.getters.getDashboardStats;
+        }
+    },
     mounted () {
-        this.renderChart(this.$store.getters.getDashboardStats, this.options);
+        this.drawChart();
+    },
+    watch: {
+        chartData() {
+            this.drawChart();
+        }
     }
 }
 </script>

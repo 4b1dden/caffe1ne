@@ -22,7 +22,16 @@ import App from './app.vue';
 // Init F7 Vue Plugin
 Framework7.use(Framework7Vue);
 
+const moment = require("moment");
+moment.locale("sk");
+
+Vue.use(require('vue-moment'), {
+  moment
+});
+
 import store from './store/store';
+
+Vue.config.productionTip = false
 
 // Init App
 new Vue({

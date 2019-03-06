@@ -3,6 +3,7 @@ import AboutPage from './pages/about.vue';
 import FormPage from './pages/form.vue';
 import DynamicRoutePage from './pages/dynamic-route.vue';
 import NotFoundPage from './pages/not-found.vue';
+import FullHistoryPage from './pages/full-history.vue';
 
 import PanelLeftPage from './pages/panel-left.vue';
 
@@ -26,6 +27,10 @@ export default [
   {
     path: '/dynamic-route/blog/:blogId/post/:postId/',
     component: DynamicRoutePage,
+  },
+  {
+    path: '/full-history/',
+    component: FullHistoryPage,
   },
   {
     path: '(.*)',

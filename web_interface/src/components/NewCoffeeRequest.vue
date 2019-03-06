@@ -30,9 +30,9 @@
             <option :value="3">Silná</option>
         </f7-list-input>
         <f7-block-title>Kedy?</f7-block-title>
-        <f7-list>
-            <f7-list-item @change="form.roastRightAway = true" value="true" radio :checked="form.roastRightAway" name="radio1" title="Hneď" v-model="form.roastRightAway"/>
-            <f7-list-item @change="form.roastRightAway = false" value="false" radio name="radio1" title="Zvolím si čas" v-model="form.roastRightAway"/>
+        <f7-list >
+            <f7-list-item @change="form.roastRightAway = true" radio :checked="form.roastRightAway" name="radio1" title="Hneď" v-model="form.roastRightAway"/>
+            <f7-list-item @change="form.roastRightAway = false" radio name="radio1" title="Zvolím si čas" v-model="form.roastRightAway" />
         </f7-list>
         
         <div class="schedule-later" v-if="!form.roastRightAway">
@@ -65,7 +65,16 @@ export default {
         onButtonClick: function() {
             CoffeeService.requestCoffee(this.form).then(response => {
                 console.log(response);
-            })
+                this.form.amount = 2;
+                this.form.intensity = 1;
+                this.form.roastRightAway = true;
+                this.form.delayHours = 0;
+                this.form.delayMinutes = 30;
+
+                this.$store.dispatch("fetchAllStats");
+            }).catch(err => {
+                alert("couldnt prepare coffee");
+            }) 
         }
     }
 }
