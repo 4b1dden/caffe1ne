@@ -24,6 +24,11 @@ import StatsManager from './stats-manager.vue';
 import CoffeeService from '../services/CoffeeService.js';
 
 export default {
+    data() {
+      return {
+        isLoading: true
+      }
+    },
     components: {
       'coffee-manager': CoffeeManager,
       'stats-manager': StatsManager

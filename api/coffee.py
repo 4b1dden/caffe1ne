@@ -3,12 +3,19 @@ from mappings import CoffeeRequest
 import flask
 from datetime import datetime, timedelta
 
-#importing substrate
-# import sys
-# import os
-# lib_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../substrate'))
-# sys.path.append(lib_path)
+import os
+import sys
 
+#importing substrate
+absFilePath = os.path.abspath(__file__)
+fileDir = os.path.dirname(os.path.abspath(__file__))
+parentDir = os.path.dirname(fileDir)
+substrateDir = os.path.join(parentDir, "substrate")
+print(substrateDir)
+
+sys.path.append(substrateDir)
+
+from session_manager import SessionManager
 
 parser = reqparse.RequestParser()
 parser.add_argument('name', type=str)
@@ -19,6 +26,8 @@ parser.add_argument('delayHours', type=int)
 parser.add_argument('delayMinutes', type=int)
 
 coffee_req_schema = CoffeeRequest.CoffeeRequest
+
+_sm = SessionManager()
 
 class Coffee(Resource):
     def get(self):
@@ -33,16 +42,16 @@ class Coffee(Resource):
 
         req = coffee_req_schema(name=args.name, amount=args.amount, intensity=args.intensity, roastRightAway=args.roastRightAway, roastAt=roastAt)
         
-        # todo: call substrate api
         flask.g.session.add(req)
         # flask.g.session.commit()
 
         response_obj = args
         response_obj["willRoastAt"] = roastAt.strftime('%Y-%m-%dT%H:%M:%S')
 
-        # if args.roastRightAway:
-        #     print("robim kavu....")
-        #     resp = test.urobKavu()
-        #     print("Mam response .. {}".format(resp))
+        request_state = _sm.request_coffee(req)
+        response_obj["requestState"] = {
+            "enum": request_state.name,
+            "code": request_state.value
+        }
 
         return response_obj

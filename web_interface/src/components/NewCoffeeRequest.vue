@@ -1,5 +1,9 @@
 <template>
-    <f7-list form>
+    <div>
+        <loader :active.sync="isLoading" 
+        :is-full-page="true"></loader>
+
+        <f7-list form>
         <f7-list-input
         label="Meno"
         type="text"
@@ -43,14 +47,21 @@
         </div>
         <f7-button @click="onButtonClick" class="col" round>Zrob kaveju</f7-button>
     </f7-list>
+    </div>
 </template>
 
 <script>
 import CoffeeService from '../services/CoffeeService.js';
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
 
 export default {
+    components: {
+        'loader': Loading
+    },
     data() {
         return {
+            isLoading: false,
             form: {
                 name: this.$store.getters.getUserNickname,
                 amount: 2,
@@ -62,9 +73,13 @@ export default {
         }
     },
     methods: {
+        onCancel: function () {
+            console.log('on cancel')
+        },
         onButtonClick: function() {
+            this.isLoading = true;
             CoffeeService.requestCoffee(this.form).then(response => {
-                console.log(response);
+                this.isLoading = false;
                 this.form.amount = 2;
                 this.form.intensity = 1;
                 this.form.roastRightAway = true;
@@ -73,6 +88,7 @@ export default {
 
                 this.$store.dispatch("fetchAllStats");
             }).catch(err => {
+                this.isLoading = false;
                 alert("couldnt prepare coffee");
             }) 
         }

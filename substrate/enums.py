@@ -1,0 +1,10 @@
+from enum import Enum
+
+class COFFEE_MACHINE_CONNECTION(Enum):
+    IS_CONNECTED = 1
+    NOT_CONNECTED = 2
+
+class COFFEE_REQUEST_STATUS(Enum):
+    SUCCESSFUL = 1
+    PENDING_REQUEST = 2
+    ERROR = 3

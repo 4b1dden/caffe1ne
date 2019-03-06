@@ -47,12 +47,12 @@ def get_dashboard_stats():
     coffees_per_day['data'] = week_data
     coffees_per_day['backgroundColor'] = ["#3e95cd"] * 7
 
+    print(dashboard_stats)
     dashboard_stats['datasets'].append(coffees_per_day)
 
     return dashboard_stats
 
 def get_whole_history():
-    #last 10 orders
     orders = []
 
     all = flask.g.session\

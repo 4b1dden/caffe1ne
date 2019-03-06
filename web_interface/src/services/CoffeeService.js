@@ -15,7 +15,8 @@ export default {
     requestCoffee: function (obj) {
         return new Promise (
             async function (resolve, reject) {
-                const response = await api.post(constants.API.ENDPOINTS.COFFEE.ENTRY, obj)
+                const response = await api.post(constants.API.ENDPOINTS.COFFEE.ENTRY, obj);
+                console.log(response.data);
                 if (response.ok) resolve(response.data);
                 else reject(response);
             }
