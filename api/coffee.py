@@ -18,12 +18,12 @@ sys.path.append(substrateDir)
 from session_manager import SessionManager
 
 parser = reqparse.RequestParser()
-parser.add_argument('name', type=str)
-parser.add_argument('amount', type=int)
-parser.add_argument('intensity', type=int)
-parser.add_argument('roastRightAway', type=bool)
-parser.add_argument('delayHours', type=int)
-parser.add_argument('delayMinutes', type=int)
+parser.add_argument('name', type=str, required=True)
+parser.add_argument('amount', type=int, required=True)
+parser.add_argument('intensity', type=int, required=True)
+parser.add_argument('roastRightAway', type=bool, required=True)
+parser.add_argument('delayHours', type=int, required=True)
+parser.add_argument('delayMinutes', type=int, required=True)
 
 coffee_req_schema = CoffeeRequest.CoffeeRequest
 

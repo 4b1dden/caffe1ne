@@ -23,7 +23,6 @@ class SessionManager:
         return self.COFFEE_MACHINE_CONNECTION_STATUS == 1
 
     # coffee_request_model properties: name, amount, intensity, roastRightAway, roastAt
-    # @contextmanager
     def request_coffee(self, coffee_request_model):
         req = CoffeeRequest(coffee_request_model)
         
@@ -44,7 +43,3 @@ class SessionManager:
         
     def addRequestToSessionRequests(self, r):
         self.SESSION_REQUESTS.append(r)
-
-    # todo
-    def callCoffeeMachine(self):
-        pass
