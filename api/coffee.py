@@ -11,7 +11,6 @@ absFilePath = os.path.abspath(__file__)
 fileDir = os.path.dirname(os.path.abspath(__file__))
 parentDir = os.path.dirname(fileDir)
 substrateDir = os.path.join(parentDir, "substrate")
-print(substrateDir)
 
 sys.path.append(substrateDir)
 

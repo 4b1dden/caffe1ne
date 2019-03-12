@@ -4,6 +4,7 @@ import FormPage from './pages/form.vue';
 import DynamicRoutePage from './pages/dynamic-route.vue';
 import NotFoundPage from './pages/not-found.vue';
 import FullHistoryPage from './pages/full-history.vue';
+import SettingsPage from './pages/settings.vue';
 
 import PanelLeftPage from './pages/panel-left.vue';
 
@@ -31,6 +32,10 @@ export default [
   {
     path: '/full-history/',
     component: FullHistoryPage,
+  },
+  {
+    path: '/settings/',
+    component: SettingsPage
   },
   {
     path: '(.*)',

@@ -68,7 +68,6 @@ def get_whole_history():
 
 class CoffeeStats(Resource):
     def get(self):
-        
         stats = {}
         stats['dashboard'] = get_dashboard_stats()
         stats['all'] = get_whole_history() 

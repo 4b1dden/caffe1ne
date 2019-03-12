@@ -1,6 +1,6 @@
 export default {
-    getUserNickname: (state) => {
-        return state.userNickname
+    getUserName: (state) => {
+        return state.user.name
     },
     getDashboardStats: (state) => {
         return state.stats.dashboard

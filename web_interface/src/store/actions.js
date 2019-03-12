@@ -14,5 +14,21 @@ export default {
                 });
             }
         )
+    },
+    loadUserConfig({ dispatch }) {
+        return new Promise (
+            function (resolve, reject) {
+                // dispatch("setUserData", config);
+            }
+        )
+    },
+    setUserData ({state, dispatch}, data) {
+        return new Promise (
+            function (resolve, reject) {
+                Object.keys(data).map(key => {
+                    state.user[key] = data[key];
+                });
+            }
+        )
     }
 }

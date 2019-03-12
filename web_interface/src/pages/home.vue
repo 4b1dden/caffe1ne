@@ -1,9 +1,9 @@
 <template>
   <f7-page>
     <f7-navbar>
-      <f7-nav-left>
-        <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
-      </f7-nav-left>
+      <f7-nav-right>
+        <f7-link icon-if-ios="f7:settings" icon-if-md="material:settings" @click="onClick"></f7-link>
+      </f7-nav-right>
       <f7-nav-title>caffe1ne // ovládací panel</f7-nav-title>
     </f7-navbar>
     <f7-block>
@@ -33,5 +33,10 @@ export default {
       'coffee-manager': CoffeeManager,
       'stats-manager': StatsManager
     }, 
+    methods: {
+      onClick: function () {
+        this.$f7router.navigate("/settings/");
+      }
+    }
 }
 </script>

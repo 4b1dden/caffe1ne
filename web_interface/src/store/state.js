@@ -1,5 +1,8 @@
 export default {
-    userNickname: "Kiko",
+    user: {
+        name: "testmeno",
+        foo: "bar"
+    },
     stats: {
         dashboard: {},
         all: {}

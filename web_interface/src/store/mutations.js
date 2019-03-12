@@ -1,6 +1,6 @@
 export default {
-    changeUserNickname: (state, payload) => {
-        state.userNickname = payload;
+    setUserName: (state, payload) => {
+        if (typeof payload == "string") state.user.name = payload;
     },
     setDashboardStats: (state, stats) => {
         state.stats.dashboard = stats;

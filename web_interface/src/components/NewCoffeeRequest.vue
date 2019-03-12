@@ -58,12 +58,12 @@ import 'vue-loading-overlay/dist/vue-loading.css';
 export default {
     components: {
         'loader': Loading
-    },
+    }, 
     data() {
         return {
             isLoading: false,
             form: {
-                name: this.$store.getters.getUserNickname,
+                name: this.$store.getters.getUserName,
                 amount: 2,
                 intensity: 1,
                 roastRightAway: true,
@@ -91,6 +91,11 @@ export default {
                 this.isLoading = false;
                 alert("couldnt prepare coffee");
             }) 
+        }
+    },
+    watch: {
+        "$store.getters.getUserName"() {
+            this.form.name = this.$store.getters.getUserName;
         }
     }
 }
